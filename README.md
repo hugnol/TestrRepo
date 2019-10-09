@@ -10,6 +10,6 @@ This guide will not focus on how to operate the DoBot Magician through the Magic
 
 To get started you'll need an IDE which you can use to work with Python. There is no need to use a specific one so go with the IDE that you are the most comfortable with and has support for Python. For the functions created in this guide [Atom](https://atom.io/) was used, but it is not necessary.
 
-You will also have to download the API supplied by DOBOT for the DoBot Magician. The file you are looking for is Dobot Demo v2.0 and can be found [here](https://www.dobot.cc/downloadcenter/dobot-magician.html?sub_cat=72#sub-download).
+To communicate with the DoBot we need to download the API supplied by DOBOT for the DoBot Magician. The file you are looking for is Dobot Demo v2.0 and can be found [here](https://www.dobot.cc/downloadcenter/dobot-magician.html?sub_cat=72#sub-download).
 
 You will also need a copy of [Python](https://www.python.org/). We will be using Python as a script language, so no compiler requirement is necessary.
