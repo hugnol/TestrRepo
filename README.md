@@ -4,7 +4,7 @@
 
 The [DoBot Magician](https://www.dobot.cc/dobot-magician/product-overview.html) is a fun mechanical arm with alot of functionallity. Thanks to the large array of peripherals available it can do many tasks if operated correctly. The main means of controling the DoBot Magician is the [Magician Studio](https://www.dobot.cc/downloadcenter/dobot-magician.html#most-download) application and it is easy to use for people of any age. 
 
-This guide will not focus on how to operate the DoBot Magician through the Magician Studio, but instead through Python. Using your own code to control the DoBot Magician opens up for much more freedom, allowing things like automation and very calibrated movements for intricate tasks.
+This guide will not focus on how to operate the DoBot Magician through the Magician Studio, but instead through Python. Using your own code to control the DoBot Magician opens up for much more freedom, allowing things like automation and very calibrated movements for intricate tasks. If you are not familiar with Python, don't worry! It is powerfull but easy to learn.
 
 ## Starting Out
 
@@ -13,3 +13,5 @@ To get started you'll need an IDE which you can use to work with Python. There i
 To communicate with the DoBot we need to download the API supplied by DOBOT for the DoBot Magician. The file you are looking for is Dobot Demo v2.0 and can be found [here](https://www.dobot.cc/downloadcenter/dobot-magician.html?sub_cat=72#sub-download).
 
 You will also need a copy of [Python](https://www.python.org/). We will be using Python as a script language, so no compiler requirement is necessary.
+
+## Your first program
