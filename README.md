@@ -4,4 +4,4 @@ The DoBot Magician is a fun mechanical arm with alot of functionallity. Thanks t
 
 This guide will not focus on how to operate the DoBot Magician through the Magician Studio, but instead through Python. Using your own code to control the DoBot Magician opens up for much more freedom, allowing things like automation and very calibrated movements for intricate tasks.
 
-## Getting Started
+## Starting Out
