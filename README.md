@@ -7,3 +7,5 @@ This guide will not focus on how to operate the DoBot Magician through the Magic
 ## Starting Out
 
 To get started you'll need an IDE which you can use to work with Python. There is no need to use a specific one so go with the IDE that you are the most comfortable with and has support for Python. For the functions created in this guide [Atom](https://atom.io/) was used, but it is not necessary.
+
+You will also need Python installed on your computer.
