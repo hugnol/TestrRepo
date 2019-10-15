@@ -6,7 +6,7 @@ WHAT TO DO:
 
 
 
-# Dobot Maigician with Python - Starter Guide
+# Dobot Magician with Python - Starter Guide
 
 *Disclaimer: This guide will cover starting out with the DoBot Magician using Windows. No other operating system is guaranteed to work with the method bellow, but it will be similar.*
 
