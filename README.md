@@ -3,6 +3,7 @@ WHAT TO DO:
 - Functions + Descriptions
 - First program example.
 - How to give commands.
+- Image Processing
 
 
 
