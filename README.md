@@ -128,3 +128,6 @@ The Dobot Magician has alot of different peripherals in its repository, allowing
 
 The enableControl argument enables or disables the pump. Suction enables outtake or intake. For more peripheral information, refer to the documentation.
 
+
+There folder xxx contains wrapper functions which can be used as an example when making your own program.
+
