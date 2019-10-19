@@ -45,23 +45,29 @@ We will import the DobotDLLType file in python with the local name dType, as the
 To have access to the library containing the functions, we have to load it into an object in out code. The function *dType.load()* will load the platform specific library and return it into an object which we will call *api*.
 
 **Syntax**:
-*api = dType.load()*
-
+```python
+api = dType.load()
+```
 
 ### Connect to the Dobot
 To connect to the Dobot we use the function *dType.ConnectDobot()*. The arguments in this function are the api object created with the *dType.load()* function, the port name for the Dobot and the baudrate. The port name will only affect you if you use multiple Dobots connected to the computer and if you only have one Dobot Magician connected then the port name doesnt have to be specified. More information can be found in the documentation.
 
 **Syntax**:
-*dType.ConnectDobot(api, portName, baudrate)*
+```python
+dType.ConnectDobot(api, portName, baudrate)
+```
 
 **Default Example**:
-*dType.ConnectDobot(api, "", 115200)*
+```python
+dType.ConnectDobot(api, "", 115200)
+```
 
 To disconnect the Dobot, the function *dType.DisconnectDobot()* is used.
 
 **Syntax**
-*dType.DisconnectDobot(api)
-
+```python
+dType.DisconnectDobot(api)
+```
 
 #### Queue Manipulation
 There are functions which manipulates the command queue and functions that issue commands to the Dobot. You can operate the Dobot using the command queue, or just issue them directly. The difference is that the command queue can be filled up with commands and then executed in order, while without it the command will be executed directly after being called. To start off we will go through the mcommand queue manipulation functions.
@@ -69,18 +75,24 @@ There are functions which manipulates the command queue and functions that issue
 The function *dType.SetQueuedCmdStartExec()* will start executing the commands in the queue one after another in order of inputting them. If no commands are in the queue, nothing will happen.
 
 **Syntax**: 
-*dType.SetQueuedCmdStartExec()*
+```python
+dType.SetQueuedCmdStartExec()
+```
 
 To stop executing the commands in the queue, you have to call *dType.SetQueuedCmdStopExec()*. This will stop quering the Dobot, but if a command is currently running when the function is called, the command will finish its execution. The function *dType.SetQueuedCmdForceStopExec()* however, will force the command being executed to be forced to stop.
 
 **Syntax**: 
-*dType.SetQueuedCmdStopExec()*
-*dType.SetQueuedCmdForceStopExec()*
+```python
+dType.SetQueuedCmdStopExec()
+dType.SetQueuedCmdForceStopExec()
+```
 
 The command queue can also be cleared using the function *dType.SetQueuedCmdClear()*.
 
 **Syntax**: 
-*dType.SetQueuedCmdClear(api)*
+```python
+dType.SetQueuedCmdClear(api)
+```
 
 More queue manipulation functions are available in the documentation.
 
@@ -90,21 +102,28 @@ Before we start issuing movement commands we need to set some parameters which s
 The first argument is the *api* object created with the load function. The second specifies the velocity ratio. The third specifies the acceleration ratio, and the last argument specifies if the function should be queued or not.
 
 **Syntax**:
-*dType.SetPTPCommonParams(api, v, a, isQueued)*
+```python
+dType.SetPTPCommonParams(api, v, a, isQueued)
+```
 
 **Default Example**:
-*dType.SetPTPCommonParams(api, 100, 100, isQueued = 1)*
+```python
+dType.SetPTPCommonParams(api, 100, 100, isQueued = 1)
+```
 
 The home parameter specifies where the default stance of the Dobot Magician. Calling the home function then returns to this position. The arguments specifies the X and Y coordinates of the home location. Z is the height of the arm at this location and R is the rotation of the peripheral to return to. You can play around with the coordinates to find where you want the position to be. To return to the home position, use *dType.SetHomeCmd()*. If the home function is called before setting parameters, the dobot will return to the default home location, otherwise it will go to the user specified location.
 
 **Syntax**:
-*dType.SetHomeParams(api, x, y, z, r, isQueued)*
-*dType.SetHomeCmd(api, homeCmd, isQueued)*
+```python
+dType.SetHomeParams(api, x, y, z, r, isQueued)
+dType.SetHomeCmd(api, homeCmd, isQueued)
+```
 
 **Default Example**:
-*dType.SetHomeParams(api, 250, 0, 50, 0, isQueued = 1)*
-*dType.SetHomeCmd(api, homeCmd = 0, isQueued = 1)*
-
+```python
+dType.SetHomeParams(api, 250, 0, 50, 0, isQueued = 1)
+dType.SetHomeCmd(api, homeCmd = 0, isQueued = 1)
+```
 
 ### Movement Commands
 There are two major ways of moving the Dobot Magicians arm. The first is using X, Y and Z coordinates and the other is based on joint orientation. We will be using X, Y and Z in this guide, but if you want to use the joints please refer to the documentation.
@@ -112,10 +131,14 @@ There are two major ways of moving the Dobot Magicians arm. The first is using X
 The main way of moving the Dobot to a location is through the function *dType.SetPTPCmd()*. This function requires X, Y, Z and R coordinates and rotation. We also specify which movement mode to be used in the function and if we want to queue it or not.
 
 **Syntax**:
-*dType.SetPTPCmd(api, dType.movementMode, X, Y, Z, R, isQueued)*
+```python
+dType.SetPTPCmd(api, dType.movementMode, X, Y, Z, R, isQueued)
+```
 
 **Default Example**
-*dType.SetPTPCmd(api, dType.PTPMode.PTPMOVLXYZMode, X, Y, Z, R, isQueued = 1)*
+```python
+dType.SetPTPCmd(api, dType.PTPMode.PTPMOVLXYZMode, X, Y, Z, R, isQueued = 1)
+```
 
 After a command is issued, use the *dType.QueuedCmdStartExec()* function to start execution explained above. It is important when not using the queue to use the *dType.dSleep()* function to allow for commands to fully execute before forcing a new one, otherwise the outcome might not be satisfactory.
 
@@ -124,10 +147,12 @@ After a command is issued, use the *dType.QueuedCmdStartExec()* function to star
 The Dobot Magician has alot of different peripherals in its repository, allowing it to do a bunch of fun things. Thins like using a suction cup to grab items, or grabbing items with a claw and many, many more! To activate the suction cup we use the function *dType.SetEndEffectorSuctionCup()*.
 
 **Syntax**:
-*dType.SetEndEffectorSuctionCup(api, enableControl, suction, isQueued)*
+```python
+dType.SetEndEffectorSuctionCup(api, enableControl, suction, isQueued)
+```
 
 The enableControl argument enables or disables the pump. Suction enables outtake or intake. For more peripheral information, refer to the documentation.
 
 
-There folder xxx contains wrapper functions which can be used as an example when making your own program.
+There file named DobotArm.py contains wrapper functions which can be used as an example when making your own program.
 
