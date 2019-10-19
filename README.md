@@ -62,6 +62,7 @@ dType.ConnectDobot(api, portName, baudrate)
 dType.ConnectDobot(api, "", 115200)
 ```
 
+
 To disconnect the Dobot, the function ```dType.DisconnectDobot()``` is used.
 
 **Syntax**
@@ -127,7 +128,7 @@ dType.SetHomeCmd(api, homeCmd = 0, isQueued = 1)
 ### Movement Commands
 There are two major ways of moving the Dobot Magicians arm. The first is using X, Y and Z coordinates and the other is based on joint orientation. We will be using X, Y and Z in this guide, but if you want to use the joints please refer to the documentation.
 
-The main way of moving the Dobot to a location is through the function ```dType.SetPTPCmd()```. This function requires X, Y, Z and R coordinates and rotation. We also specify which movement mode to be used in the function and if we want to queue it or not.
+The main way of moving the Dobot to a location is through the function ```dType.SetPTPCmd()```. This function requires X, Y, Z and R coordinates and rotation. We also specify which movement mode to be used in the function and if we want to queue it or not. Keep in mind that the Dobot Magician will lock up if you move the arm to a location which it's unable to reach.
 
 **Syntax**:
 ```python
