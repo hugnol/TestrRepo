@@ -16,6 +16,7 @@ This guide will not focus on how to operate the DoBot Magician through the Magic
 
 ## Table of Content
 * [Starting Out](#starting-out)
+   * [Download Links](#download-links)
 * [Test Program](#test-program)
 * [Important Functions](#important-functions)
    * [Connect to the Dobot](#connect-to-the-dobot)
@@ -33,12 +34,15 @@ To communicate with the DoBot we need to download the API supplied by DOBOT for 
 You will also need [Python](https://www.python.org/). Python is also available for download through the Microsoft Store.
 
 ### Download Links
-[Atom](https://atom.io/)
-[Magician Studio](https://www.dobot.cc/downloadcenter/dobot-magician.html)
-[DobotDemoV2.0](https://www.dobot.cc/downloadcenter/dobot-magician.html?sub_cat=72#sub-download)
-[Python](https://www.python.org/)
+[Atom](https://atom.io/) - IDE referensed above.
 
-*Python installation instructions are available at their website*
+[Magician Studio](https://www.dobot.cc/downloadcenter/dobot-magician.html) - Dobot Application and Driver
+
+[DobotDemoV2.0](https://www.dobot.cc/downloadcenter/dobot-magician.html?sub_cat=72#sub-download) - Code Examples
+
+[Python](https://www.python.org/) - Language used in this guide
+
+*Python installation instructions are available at their website. Other languages are also available but won't be present in this guide.*
 
 ## Test Program
 After extracting the contents of the DobotDemoV2.0 folder we find a list of more folders. These are demos for the available languages which can be used to operate the Dobot. The one we are going to use in this guide is the DobotDemoForPython. In this folder we can find a file called DobotControl.py. This file contains a test program which uses a connection to the Dobot through USB which makes it do a couple of gestures. If you have installed Python and Magician Studio correctly you should be able to run the file without any problems, as long as you are connected to the Dobot through any of your USB ports. 
