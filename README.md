@@ -166,6 +166,8 @@ There file named DobotArm.py contains wrapper functions which can be used as an 
 
 [DobotDemoV2.0](https://www.dobot.cc/downloadcenter/dobot-magician.html?sub_cat=72#sub-download) - Code Examples
 
+[Dobot API Manual](https://www.dobot.cc/downloadcenter/dobot-magician.html?sub_cat=72#sub-download) - Manual for API 
+
 [Python](https://www.python.org/) - Language used in this guide
 
 *Python installation instructions are available at their website. Other languages are also available but won't be present in this guide.*
