@@ -70,7 +70,7 @@ To disconnect the Dobot, the function ```dType.DisconnectDobot()``` is used.
 dType.DisconnectDobot(api)
 ```
 
-#### Queue Manipulation
+### Queue Manipulation
 There are functions which manipulates the command queue and functions that issue commands to the Dobot. You can operate the Dobot using the command queue, or just issue them directly. The difference is that the command queue can be filled up with commands and then executed in order, while without it the command will be executed directly after being called. To start off we will go through the mcommand queue manipulation functions.
 
 The function ```dType.SetQueuedCmdStartExec()``` will start executing the commands in the queue one after another in order of inputting them. If no commands are in the queue, nothing will happen.
