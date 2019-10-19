@@ -172,9 +172,10 @@ There file named DobotArm.py contains wrapper functions which can be used as an 
 
 *Python installation instructions are available at their website. Other languages are also available but won't be present in this guide.*
 
-
-
+___
 
 *Created by Hugo Nolte for Course PA1414 - Software Engineering Project*
+
 *BTH - Blekinge Institute of Technology*
+
 *2019*
