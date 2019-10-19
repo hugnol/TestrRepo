@@ -8,7 +8,7 @@ WHAT TO DO:
 
 
 # Dobot Magician with Python - Starter Guide
-*Disclaimer: This guide will cover starting out with the DoBot Magician using Windows. No other operating system is guaranteed to work with the method bellow, but it will be similar.*
+*Disclaimer: This guide will cover starting out with the DoBot Magician using Windows. Using other operating systems won't guarantee that the methods used in this guide will work.*
 
 The [DoBot Magician](https://www.dobot.cc/dobot-magician/product-overview.html) is a fun mechanical arm with alot of functionallity. Thanks to the large array of peripherals available it can do many tasks if operated correctly. The main means of controling the DoBot Magician is the [Magician Studio](https://www.dobot.cc/downloadcenter/dobot-magician.html#most-download) application and it is easy to use for people of any age. 
 
@@ -16,7 +16,6 @@ This guide will not focus on how to operate the DoBot Magician through the Magic
 
 ## Table of Content
 * [Starting Out](#starting-out)
-   * [Download Links](#download-links)
 * [Test Program](#test-program)
 * [Important Functions](#important-functions)
    * [Connect to the Dobot](#connect-to-the-dobot)
@@ -24,6 +23,7 @@ This guide will not focus on how to operate the DoBot Magician through the Magic
    * [Setting Parameters](#setting-parameters)
    * [Movement Commands](#movement-commands)
    * [Peripherals](#peripherals)
+* [Download Links](#download-links)
 
 
 ## Starting Out
@@ -33,16 +33,6 @@ To communicate with the DoBot we need to download the API supplied by DOBOT for 
 
 You will also need [Python](https://www.python.org/). Python is also available for download through the Microsoft Store.
 
-### Download Links
-[Atom](https://atom.io/) - IDE referensed above.
-
-[Magician Studio](https://www.dobot.cc/downloadcenter/dobot-magician.html) - Dobot Application and Driver
-
-[DobotDemoV2.0](https://www.dobot.cc/downloadcenter/dobot-magician.html?sub_cat=72#sub-download) - Code Examples
-
-[Python](https://www.python.org/) - Language used in this guide
-
-*Python installation instructions are available at their website. Other languages are also available but won't be present in this guide.*
 
 ## Test Program
 After extracting the contents of the DobotDemoV2.0 folder we find a list of more folders. These are demos for the available languages which can be used to operate the Dobot. The one we are going to use in this guide is the DobotDemoForPython. In this folder we can find a file called DobotControl.py. This file contains a test program which uses a connection to the Dobot through USB which makes it do a couple of gestures. If you have installed Python and Magician Studio correctly you should be able to run the file without any problems, as long as you are connected to the Dobot through any of your USB ports. 
@@ -167,6 +157,19 @@ The enableControl argument enables or disables the pump. Suction enables outtake
 
 
 There file named DobotArm.py contains wrapper functions which can be used as an example when making your own program.
+
+
+## Download Links
+[Atom](https://atom.io/) - IDE referensed above.
+
+[Magician Studio](https://www.dobot.cc/downloadcenter/dobot-magician.html) - Dobot Application and Driver
+
+[DobotDemoV2.0](https://www.dobot.cc/downloadcenter/dobot-magician.html?sub_cat=72#sub-download) - Code Examples
+
+[Python](https://www.python.org/) - Language used in this guide
+
+*Python installation instructions are available at their website. Other languages are also available but won't be present in this guide.*
+
 
 
 
