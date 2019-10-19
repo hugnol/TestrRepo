@@ -36,7 +36,7 @@ You will also need [Python](https://www.python.org/). Python is also available f
 After extracting the contents of the DobotDemoV2.0 folder we find a list of more folders. The one we are going to use in this guide is the DobotDemoForPython. In this folder we can find a file called DobotControl.py. This file contains a test program which uses a connection to the Dobot through USB which makes it do a couple of gestures. If you have installed Python and Magician Studio correctly you should be able to run the file without any problems, as long as you are connected to the Dobot through any of your USB ports. 
 
 
-### Important Functions
+## Important Functions
 
 To understand how to use the Dobot more efficiently we have to look into what types of commands you can use to control it. Many of these functions are accessable inside the DoBotControl file, but theres also alot of them inside the DLL file  which is not being used. Here we will briefly go through some of the most important ones to get you started. If you want more indepth information it can be found in the [DoBot Magician API Description](https://www.dobot.cc/downloadcenter.html?sub_cat=72#sub-download).
 
