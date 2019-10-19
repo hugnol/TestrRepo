@@ -175,6 +175,6 @@ There file named DobotArm.py contains wrapper functions which can be used as an 
 
 
 
-*Created by Hugo Nolte for Course PA1414 - BTH*
-
-
+*Created by Hugo Nolte for Course PA1414 - Software Engineering Project
+BTH - Blekinge Institute of Technology
+2019*
