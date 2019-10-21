@@ -14,6 +14,7 @@ This guide will not focus on how to operate the DoBot Magician through the Magic
    * [Setting Parameters](#setting-parameters)
    * [Movement Commands](#movement-commands)
    * [Peripherals](#peripherals)
+* [Conclusion](#conclusion)
 * [Download Links](#download-links)
 
 
@@ -150,6 +151,9 @@ The enableControl argument enables or disables the pump. Suction enables outtake
 
 
 There file named DobotArm.py contains wrapper functions which can be used as an example when making your own program.
+
+### Conclusion
+The capability of the Dobot Magician lays in your hands and what you can imagine. Automation, sorting, 3D printing and so on, it is a very fun machine to play with. I hope that this guide has helped you on your way to understanding how it works and to kick start you to start making the Dobot do whatever you want it to do. 
 
 
 ## Download Links
