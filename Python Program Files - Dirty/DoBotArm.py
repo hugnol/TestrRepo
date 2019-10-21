@@ -65,17 +65,6 @@ class DoBotArm:
             dType.dSleep(200)
         dType.SetQueuedCmdStopExec(self.api)
 
-    #XYZ out-of-range Control function
-    def rangeCheck(self, x, y, z):
-        pass
-
-    #Toggle current peripheral
-    def togglePeripheral(self):
-        pass
-
-    #Toggle Wifi Connection
-
-
     #Toggles suction peripheral on/off
     def toggleSuction(self):
         lastIndex = 0
