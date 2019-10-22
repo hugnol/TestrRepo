@@ -7,13 +7,13 @@ This guide will not focus on how to operate the DoBot Magician through the Magic
 
 ## Table of Content
 * [Starting Out](#starting-out)
-* [Test Program](#test-program)
 * [Important Functions](#important-functions)
    * [Connect to the Dobot](#connect-to-the-dobot)
    * [Queue Manipulation](#queue-manipulation)
    * [Setting Parameters](#setting-parameters)
    * [Movement Commands](#movement-commands)
    * [Peripherals](#peripherals)
+* [Test Program](#test-program)
 * [Conclusion](#conclusion)
 * [Download Links](#download-links)
 
@@ -24,60 +24,6 @@ To get started you'll need an IDE which you can use to work with Python. There i
 To communicate with the DoBot we need to download the API supplied by DOBOT for the DoBot Magician. The file you are looking for is [DobotDemov2.0](https://www.dobot.cc/downloadcenter/dobot-magician.html?sub_cat=72#sub-download). From this website you're also required to download and install the [Magician Studio](https://www.dobot.cc/downloadcenter/dobot-magician.html). We will not use the application itself, but the installation process contains some dependencies required to communicate with the dobot from our third party application.
 
 You will also need [Python](https://www.python.org/). Python is also available for download through the Microsoft Store.
-
-
-## Test Program
-After extracting the contents of the DobotDemoV2.0 folder we find a list of more folders. These are demos for the available languages which can be used to operate the Dobot. The one we are going to use in this guide is the DobotDemoForPython. In this folder we can find a file called DobotControl.py. This file contains a test program which uses a connection to the Dobot through USB which makes it do a couple of gestures. If you have installed Python and Magician Studio correctly you should be able to run the file without any problems, as long as you are connected to the Dobot through any of your USB ports. 
-
-There is also an example program available for download on this github. This program includes some example functions for the API and how to apply them, this is not necessarily the only way to structure the program and the one you make will most probably not look similar to this one. Let's look into the functions.
-
-The program starts with the creation of the object which we use to communicate with the Dobot. In the case of the example program the object is called ctrlBot and is of the type DobotArm. The constructor of the object takes in home coordinates for the dobot. The constructor also calls the dobotConnect() function which connects to the Dobot and sets its various parameters.
-
-*In many of the functions we can find the self object being passed around. In python this is used to refer to the object calling the function to be able to access the information specific to that object.*
-
-**Syntax**:
-```python
-dobotConnect(self)
-```
-
-The function commandDelay() is called after each command is issued to the dobot. This is included so that the dobot is allowed to do its action before another command is issued.
-
-**Syntax**:
-```python
-dobotConnect(self, lastIndex)
-```
-
-toggleSuction() is an example function of how to initiate the peripheral connected to the dobot. In this example, we activate or deactivate the suction cup peripheral. It works much like a light switch, where the light is toggled on and off and keeps that state afterwards. This means that we only need to call the function to activate the peripheral, and then call it again once we're done with it.
-
-**Syntax**:
-```python
-toggleSuction(self)
-```
-
-Main movement is done through the moveArmXY() function. The arguments for the function is the x and y positions which we want the dobot to travel to.
-
-**Syntax**:
-```python
-moveArmXY(self, x,y)
-```
-
-As a utility a function that moves the arm to the selected home positions are also included.
-
-**Syntax**:
-```python
-moveHome(self)
-```
-
-Last but not least, the function pickToggle() moves the arm up or down to the requested height. The only argument it takes is the height it moves too.
-
-**Syntax**:
-```python
-pickToggle(self, itemHeight)
-```
-
-
-These functions will allow to do simple automation for the dobot by combining them, like in the manualmode function inside the main.py file. It allows for simple x,y grid movements and picking of items. 
-
 
 ## Important Functions
 
@@ -92,6 +38,8 @@ To have access to the library containing the functions, we have to load it into 
 api = dType.load()
 ```
 
+___
+
 ### Connect to the Dobot
 To connect to the Dobot we use the function *dType.ConnectDobot()*. The arguments in this function are the api object created with the ```dType.load()``` function, the port name for the Dobot and the baudrate. The port name will only affect you if you use multiple Dobots connected to the computer and if you only have one Dobot Magician connected then the port name doesnt have to be specified. More information can be found in the documentation.
 
@@ -105,6 +53,7 @@ dType.ConnectDobot(api, portName, baudrate)
 dType.ConnectDobot(api, "", 115200)
 ```
 
+___
 
 To disconnect the Dobot, the function ```dType.DisconnectDobot()``` is used.
 
@@ -112,6 +61,8 @@ To disconnect the Dobot, the function ```dType.DisconnectDobot()``` is used.
 ```python
 dType.DisconnectDobot(api)
 ```
+
+___
 
 ### Queue Manipulation
 There are functions which manipulates the command queue and functions that issue commands to the Dobot. You can operate the Dobot using the command queue, or just issue them directly. The difference is that the command queue can be filled up with commands and then executed in order, while without it the command will be executed directly after being called. To start off we will go through the mcommand queue manipulation functions.
@@ -123,6 +74,8 @@ The function ```dType.SetQueuedCmdStartExec()``` will start executing the comman
 dType.SetQueuedCmdStartExec()
 ```
 
+___
+
 To stop executing the commands in the queue, you have to call ```dType.SetQueuedCmdStopExec()```. This will stop quering the Dobot, but if a command is currently running when the function is called, the command will finish its execution. The function *dType.SetQueuedCmdForceStopExec()* however, will force the command being executed to be forced to stop.
 
 **Syntax**: 
@@ -131,12 +84,16 @@ dType.SetQueuedCmdStopExec()
 dType.SetQueuedCmdForceStopExec()
 ```
 
+___
+
 The command queue can also be cleared using the function *dType.SetQueuedCmdClear()*.
 
 **Syntax**: 
 ```python
 dType.SetQueuedCmdClear(api)
 ```
+
+___
 
 More queue manipulation functions are available in the documentation.
 
@@ -154,6 +111,8 @@ dType.SetPTPCommonParams(api, v, a, isQueued)
 dType.SetPTPCommonParams(api, 100, 100, isQueued = 1)
 ```
 
+___
+
 The home parameter specifies where the default stance of the Dobot Magician. Calling the home function then returns to this position. The arguments specifies the X and Y coordinates of the home location. Z is the height of the arm at this location and R is the rotation of the peripheral to return to. You can play around with the coordinates to find where you want the position to be. To return to the home position, use ```dType.SetHomeCmd()```. If the home function is called before setting parameters, the dobot will return to the default home location, otherwise it will go to the user specified location.
 
 **Syntax**:
@@ -167,6 +126,8 @@ dType.SetHomeCmd(api, homeCmd, isQueued)
 dType.SetHomeParams(api, 250, 0, 50, 0, isQueued = 1)
 dType.SetHomeCmd(api, homeCmd = 0, isQueued = 1)
 ```
+
+___
 
 ### Movement Commands
 There are two major ways of moving the Dobot Magicians arm. The first is using X, Y and Z coordinates and the other is based on joint orientation. We will be using X, Y and Z in this guide, but if you want to use the joints please refer to the documentation.
@@ -183,6 +144,8 @@ dType.SetPTPCmd(api, dType.movementMode, X, Y, Z, R, isQueued)
 dType.SetPTPCmd(api, dType.PTPMode.PTPMOVLXYZMode, X, Y, Z, R, isQueued = 1)
 ```
 
+___
+
 After a command is issued, use the ```dType.QueuedCmdStartExec()``` function to start execution explained above. It is important when not using the queue to use the ```dType.dSleep()``` function to allow for commands to fully execute before forcing a new one, otherwise the outcome might not be satisfactory.
 
 
@@ -198,6 +161,71 @@ The enableControl argument enables or disables the pump. Suction enables outtake
 
 
 There file named DobotArm.py contains wrapper functions which can be used as an example when making your own program.
+
+## Test Program
+After extracting the contents of the DobotDemoV2.0 folder we find a list of more folders. These are demos for the available languages which can be used to operate the Dobot. The one we are going to use in this guide is the DobotDemoForPython. In this folder we can find a file called DobotControl.py. This file contains a test program which uses a connection to the Dobot through USB which makes it do a couple of gestures. If you have installed Python and Magician Studio correctly you should be able to run the file without any problems, as long as you are connected to the Dobot through any of your USB ports. 
+
+There is also an example program available for download on this github. This program includes some example functions for the API , this is not necessarily the only way to structure the program and the one you make will most probably not look similar to this one. Nevertheless, let's look into the functions.
+
+The program starts with the creation of the object which we use to communicate with the Dobot. In the case of the example program the object is called ctrlBot and is of the type DobotArm. The constructor of the object takes in home coordinates for the Dobot. The constructor also calls the dobotConnect() function which connects to the Dobot and sets its various parameters.
+
+*In many of the functions we can find the self object being passed around. In python this is used to refer to the object calling the function to be able to access the information specific to that object.*
+
+**Syntax**:
+```python
+dobotConnect(self)
+```
+
+___
+
+The function commandDelay() is called after each command is issued to the dobot. This is included so that the dobot is allowed to do its action before another command is issued.
+
+**Syntax**:
+```python
+dobotConnect(self, lastIndex)
+```
+
+___
+
+toggleSuction() is an example function of how to initiate the peripheral connected to the dobot. In this example, we activate or deactivate the suction cup peripheral. It works much like a light switch, where the light is toggled on and off and keeps that state afterwards. This means that we only need to call the function to activate the peripheral, and then call it again once we're done with it.
+
+**Syntax**:
+```python
+toggleSuction(self)
+```
+
+___
+
+Main movement is done through the moveArmXY() function. The arguments for the function is the x and y positions which we want the dobot to travel to.
+
+**Syntax**:
+```python
+moveArmXY(self, x,y)
+```
+
+___
+
+As a utility a function that moves the arm to the selected home positions are also included.
+
+**Syntax**:
+```python
+moveHome(self)
+```
+
+___
+
+Last but not least, the function pickToggle() moves the arm up or down to the requested height. The only argument it takes is the height it moves too.
+
+**Syntax**:
+```python
+pickToggle(self, itemHeight)
+```
+
+___
+
+These functions will allow to do simple automation for the dobot by combining them, like in the manualmode function inside the main.py file. It allows for simple x,y grid movements and picking of items. 
+
+
 
 ### Conclusion
 The capability of the Dobot Magician lays in your hands and what you can imagine. Automation, sorting, 3D printing and so on, it is a very fun machine to play with. I hope that this guide has helped you on your way to understanding how it works and to kick start you to start making the Dobot do whatever you want it to do. 
