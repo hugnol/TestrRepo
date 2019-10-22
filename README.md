@@ -29,7 +29,54 @@ You will also need [Python](https://www.python.org/). Python is also available f
 ## Test Program
 After extracting the contents of the DobotDemoV2.0 folder we find a list of more folders. These are demos for the available languages which can be used to operate the Dobot. The one we are going to use in this guide is the DobotDemoForPython. In this folder we can find a file called DobotControl.py. This file contains a test program which uses a connection to the Dobot through USB which makes it do a couple of gestures. If you have installed Python and Magician Studio correctly you should be able to run the file without any problems, as long as you are connected to the Dobot through any of your USB ports. 
 
-There is also an example program available for download on this github. The program has an example manual mode which allows you to enter coordinates where the arm should move, it allows for activating the suction peripheral and moving the arm up and down into a position where it can pick up items.
+There is also an example program available for download on this github. This program includes some example functions for the API and how to apply them, this is not necessarily the only way to structure the program and the one you make will most probably not look similar to this one. Let's look into the functions.
+
+The program starts with the creation of the object which we use to communicate with the Dobot. In the case of the example program the object is called ctrlBot and is of the type DobotArm. The constructor of the object takes in home coordinates for the dobot. The constructor also calls the dobotConnect() function which connects to the Dobot and sets its various parameters.
+
+*In many of the functions we can find the self object being passed around. In python this is used to refer to the object calling the function to be able to access the information specific to that object.*
+
+**Syntax**:
+```python
+dobotConnect(self)
+```
+
+The function commandDelay() is called after each command is issued to the dobot. This is included so that the dobot is allowed to do its action before another command is issued.
+
+*Syntax**:
+```python
+dobotConnect(self, lastIndex)
+```
+
+toggleSuction() is an example function of how to initiate the peripheral connected to the dobot. In this example, we activate or deactivate the suction cup peripheral. It works much like a light switch, where the light is toggled on and off and keeps that state afterwards. This means that we only need to call the function to activate the peripheral, and then call it again once we're done with it.
+
+*Syntax**:
+```python
+toggleSuction(self)
+```
+
+Main movement is done through the moveArmXY() function. The arguments for the function is the x and y positions which we want the dobot to travel to.
+
+*Syntax**:
+```python
+moveArmXY(self, x,y)
+```
+
+As a utility a function that moves the arm to the selected home positions are also included.
+
+*Syntax**:
+```python
+moveHome(self)
+```
+
+Last but not least, the function pickToggle() moves the arm up or down to the requested height. The only argument it takes is the height it moves too.
+
+*Syntax**:
+```python
+pickToggle(self, itemHeight)
+```
+
+
+These functions will allow to do simple automation for the dobot by combining them, like in the manualmode function inside the main.py file. It allows for simple x,y grid movements and picking of items. 
 
 
 ## Important Functions
