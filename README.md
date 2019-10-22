@@ -3,7 +3,7 @@
 
 The [DoBot Magician](https://www.dobot.cc/dobot-magician/product-overview.html) is a fun mechanical arm with alot of functionallity. Thanks to the large array of peripherals available it can do many tasks if operated correctly. The main means of controling the DoBot Magician is the [Magician Studio](https://www.dobot.cc/downloadcenter/dobot-magician.html#most-download) application and it is easy to use for people of any age. 
 
-This guide will not focus on how to operate the DoBot Magician through the Magician Studio, but instead through Python. Using your own code to control the DoBot Magician opens up for much more freedom, allowing things like automation and very calibrated movements for intricate tasks. If you are not familiar with Python, don't worry! It is powerfull but easy to learn.
+This guide will not focus on how to operate the DoBot Magician through the Magician Studio, but instead through Python. Using your own code to control the DoBot Magician opens up for much more freedom, allowing things like automation and very calibrated movements for intricate tasks. Python is an object oriented language and if you're not familiar with it please refer to the Python manual pages and the various guides available on the internet. The link to the download site, available at the bottom of the guide README file, for Python also contains tutorials and instructions for how you can get started on your own python project.
 
 ## Table of Content
 * [Starting Out](#starting-out)
@@ -19,7 +19,7 @@ This guide will not focus on how to operate the DoBot Magician through the Magic
 
 
 ## Starting Out
-To get started you'll need an IDE which you can use to work with Python. There is no need to use a specific one so go with the IDE that you are the most comfortable with and has support for Python. For the functions created in this guide [Atom](https://atom.io/) was used, but it is not necessary as an IDE like Visual Studio Code or similar would also suffice.
+To get started you'll need an IDE which you can use to work with Python. There is no need to use a specific one so go with the IDE that you are the most comfortable with and has support for Python. For the functions created in this guide [Atom](https://atom.io/) was used, but it is not necessary as an IDE like [Visual Studio Code](https://code.visualstudio.com/) or similar would also suffice.
 
 To communicate with the DoBot we need to download the API supplied by DOBOT for the DoBot Magician. The file you are looking for is [DobotDemov2.0](https://www.dobot.cc/downloadcenter/dobot-magician.html?sub_cat=72#sub-download). From this website you're also required to download and install the [Magician Studio](https://www.dobot.cc/downloadcenter/dobot-magician.html). We will not use the application itself, but the installation process contains some dependencies required to communicate with the dobot from our third party application.
 
@@ -234,6 +234,8 @@ The capability of the Dobot Magician lays in your hands and what you can imagine
 ## Download Links
 [Atom](https://atom.io/) - IDE referensed above.
 
+[VS-Code](https://code.visualstudio.com/) - Alternative IDE
+
 [Magician Studio](https://www.dobot.cc/downloadcenter/dobot-magician.html) - Dobot Application and Driver
 
 [DobotDemoV2.0](https://www.dobot.cc/downloadcenter/dobot-magician.html?sub_cat=72#sub-download) - Code Examples
@@ -242,7 +244,7 @@ The capability of the Dobot Magician lays in your hands and what you can imagine
 
 [Python](https://www.python.org/) - Language used in this guide
 
-*Python installation instructions are available at their website. Other languages are also available but won't be present in this guide.*
+*Python installation instructions are available at their website. Other languages are also available but won't be present in this guide. The choice of IDE is completely in your hands.*
 
 ___
 
