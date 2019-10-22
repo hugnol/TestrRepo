@@ -42,35 +42,35 @@ dobotConnect(self)
 
 The function commandDelay() is called after each command is issued to the dobot. This is included so that the dobot is allowed to do its action before another command is issued.
 
-*Syntax**:
+**Syntax**:
 ```python
 dobotConnect(self, lastIndex)
 ```
 
 toggleSuction() is an example function of how to initiate the peripheral connected to the dobot. In this example, we activate or deactivate the suction cup peripheral. It works much like a light switch, where the light is toggled on and off and keeps that state afterwards. This means that we only need to call the function to activate the peripheral, and then call it again once we're done with it.
 
-*Syntax**:
+**Syntax**:
 ```python
 toggleSuction(self)
 ```
 
 Main movement is done through the moveArmXY() function. The arguments for the function is the x and y positions which we want the dobot to travel to.
 
-*Syntax**:
+**Syntax**:
 ```python
 moveArmXY(self, x,y)
 ```
 
 As a utility a function that moves the arm to the selected home positions are also included.
 
-*Syntax**:
+**Syntax**:
 ```python
 moveHome(self)
 ```
 
 Last but not least, the function pickToggle() moves the arm up or down to the requested height. The only argument it takes is the height it moves too.
 
-*Syntax**:
+**Syntax**:
 ```python
 pickToggle(self, itemHeight)
 ```
