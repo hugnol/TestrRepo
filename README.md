@@ -1,3 +1,8 @@
+TO DO:
+* Highlight Files,
+* Describe Parameters for functions,
+* Split bunched up syntax
+
 # Dobot Magician with Python - Starter Guide
 *Disclaimer: This guide will cover starting out with the DoBot Magician using Windows. Using other operating systems won't guarantee that the methods used in this guide will work.*
 
