@@ -86,6 +86,8 @@ To stop executing the commands in the queue, you have to call ```dType.SetQueued
 **Syntax**: 
 ```python
 dType.SetQueuedCmdStopExec()
+```
+```python
 dType.SetQueuedCmdForceStopExec()
 ```
 
@@ -129,6 +131,8 @@ dType.SetHomeCmd(api, homeCmd, isQueued)
 **Default Example**:
 ```python
 dType.SetHomeParams(api, 250, 0, 50, 0, isQueued = 1)
+```
+```python
 dType.SetHomeCmd(api, homeCmd = 0, isQueued = 1)
 ```
 
@@ -165,10 +169,10 @@ dType.SetEndEffectorSuctionCup(api, enableControl, suction, isQueued)
 The enableControl argument enables or disables the pump. Suction enables outtake or intake. For more peripheral information, refer to the documentation.
 
 
-There file named DobotArm.py contains wrapper functions which can be used as an example when making your own program.
+There file named **DobotArm.py** contains wrapper functions which can be used as an example when making your own program.
 
 ## Test Program
-After extracting the contents of the DobotDemoV2.0 folder we find a list of more folders. These are demos for the available languages which can be used to operate the Dobot. The one we are going to use in this guide is the DobotDemoForPython. In this folder we can find a file called DobotControl.py. This file contains a test program which uses a connection to the Dobot through USB which makes it do a couple of gestures. If you have installed Python and Magician Studio correctly you should be able to run the file without any problems, as long as you are connected to the Dobot through any of your USB ports. 
+After extracting the contents of the DobotDemoV2.0 folder we find a list of more folders. These are demos for the available languages which can be used to operate the Dobot. The one we are going to use in this guide is the DobotDemoForPython. In this folder we can find a file called **DobotControl.py**. This file contains a test program which uses a connection to the Dobot through USB which makes it do a couple of gestures. If you have installed Python and Magician Studio correctly you should be able to run the file without any problems, as long as you are connected to the Dobot through any of your USB ports. 
 
 There is also an example program available for download on this github. This program includes some example functions for the API , this is not necessarily the only way to structure the program and the one you make will most probably not look similar to this one. Nevertheless, let's look into the functions.
 
@@ -228,7 +232,7 @@ pickToggle(self, itemHeight)
 
 ___
 
-These functions will allow to do simple automation for the dobot by combining them, like in the manualmode function inside the main.py file. It allows for simple x,y grid movements and picking of items. 
+These functions will allow to do simple automation for the dobot by combining them, like in the manualmode function inside the **main.py** file. It allows for simple x,y grid movements and picking of items. 
 
 
 
