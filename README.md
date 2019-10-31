@@ -48,6 +48,12 @@ To connect to the Dobot we use the function *dType.ConnectDobot()*. The argument
 
 **Syntax**:
 ```python
+# Parameters:
+# api      - Object which access the Dobot API functions.
+# portName - Portname of the Dobot, with multiple Dobots in the system this will specify which one you connect to.
+# baudrate - Rate at which information is transfered in a communication channel.
+
+# Function:
 dType.ConnectDobot(api, portName, baudrate)
 ```
 
@@ -108,6 +114,12 @@ Before we start issuing movement commands we need to set some parameters which s
 
 **Syntax**:
 ```python
+# Parameters:
+# v        - Velocity of the Dobots movements
+# a        - Acceleration of the Dobots movements.
+# isQueued - To queue the command or not.
+
+# Function:
 dType.SetPTPCommonParams(api, v, a, isQueued)
 ```
 
@@ -122,7 +134,20 @@ The home parameter specifies where the default stance of the Dobot Magician. Cal
 
 **Syntax**:
 ```python
+# Parameters:
+# x - X coordinate for home position.
+# y - Y coordinate for home position.
+# z - Z coordinate for home position.
+# r - Peripheral rotation at home position.
+
+# Function:
 dType.SetHomeParams(api, x, y, z, r, isQueued)
+
+```python
+# Parameters:
+# homeCmd - Home command variable pointers
+
+# Function:
 dType.SetHomeCmd(api, homeCmd, isQueued)
 ```
 
@@ -143,6 +168,14 @@ The main way of moving the Dobot to a location is through the function ```dType.
 
 **Syntax**:
 ```python
+# Parameters:
+# dType.movementMode - Specifies wanted movement mode.
+# X                  - Requested X coordinate.
+# Y                  - Requested Y coordinate.
+# Z                  - Requested Z coordinate.
+# R                  - PRequested peripheral rotation.
+
+# Function:
 dType.SetPTPCmd(api, dType.movementMode, X, Y, Z, R, isQueued)
 ```
 
@@ -161,6 +194,11 @@ The Dobot Magician has alot of different peripherals in its repository, allowing
 
 **Syntax**:
 ```python
+# Parameters:
+# enableControl - Enables control over the peripheral.
+# suction       - Enables or Disabled the peripheral. 
+
+# Function:
 dType.SetEndEffectorSuctionCup(api, enableControl, suction, isQueued)
 ```
 
@@ -189,7 +227,7 @@ The function commandDelay() is called after each command is issued to the dobot.
 
 **Syntax**:
 ```python
-dobotConnect(self, lastIndex)
+commandDelay(self, lastIndex)
 ```
 
 ___
