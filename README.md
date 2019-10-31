@@ -142,7 +142,7 @@ The home parameter specifies where the default stance of the Dobot Magician. Cal
 
 # Function:
 dType.SetHomeParams(api, x, y, z, r, isQueued)
-
+```
 ```python
 # Parameters:
 # homeCmd - Home command variable pointers
